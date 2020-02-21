@@ -27,7 +27,7 @@ public class TestLocalFirefox {
 	@BeforeTest
 	public void launchbrowser() throws MalformedURLException {
 		URL = "https://bryant.pprd.goalquestprogram.com";
-		String Node = "http://192.168.0.108:5557/wd/hub";
+		String Node = "http://ap-jenkdx-dev/wd/hub";
 		DesiredCapabilities cap = DesiredCapabilities.firefox();
 		cap.setBrowserName("firefox");
 		driver = new RemoteWebDriver(new URL(Node), cap);
