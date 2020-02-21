@@ -29,8 +29,6 @@ public class TestLocalFirefox {
 
              driver.findElement(By.name("q")).sendKeys("Search me");
 
-             driver.findElement(By.name("btnG")).click();
-
              driver.close();
 
 }
