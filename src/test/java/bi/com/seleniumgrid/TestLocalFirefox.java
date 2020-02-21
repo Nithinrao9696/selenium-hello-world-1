@@ -27,9 +27,9 @@ public class TestLocalFirefox {
 
              driver.navigate().to("https://www.google.co.in");
 
-             driver.findElement(By.xpath("//*[@id='gs_htif0']")) .sendKeys("Search me");
+             driver.findElement(By.name("q"))) .sendKeys("Search me");
 
-             driver.findElement(By.xpath("//*[@id='tsf']/div[2]/div[3]/center/input[1]")) .click();
+             driver.findElement(By.name("btnG")).click();
 
              driver.close();
 
