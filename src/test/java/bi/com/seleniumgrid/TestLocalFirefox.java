@@ -27,8 +27,12 @@ public class TestLocalFirefox {
  
  @Test
  public void simpleTest() {
- driver.get("https://www.edureka.co/");
- Assert.assertEquals("Instructor Led Online Courses with 24x7 Lifetime Support | Edureka", driver.getTitle());
+ driver.get(https://www.amazon.com);
+String ActualTitle = driver.getTitle();
+String ExpectedTitle = “Amazon.com: Online Shopping for Electronics, Apparel,
+    Computers, Books, DVDs & more”;
+Assert.assertEquals(ActualTitle, ExpectedTitle);
+System.out.println(“Assert passed”);
  }
  
  @AfterTest
