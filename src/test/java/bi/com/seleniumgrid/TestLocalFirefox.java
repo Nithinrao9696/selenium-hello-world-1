@@ -32,7 +32,7 @@ driver.get("https://www.amazon.com");
 String ActualTitle = driver.getTitle();
 String ExpectedTitle = "Welcome to Amazon";
 Assert.assertEquals(ActualTitle, ExpectedTitle);
-System.out.println(“Assert passed”);
+System.out.println("Assert passed");
 }
  
  @AfterTest
