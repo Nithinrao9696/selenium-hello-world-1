@@ -1,76 +1,37 @@
-package bi.com.seleniumgrid;
+package basicsOfSelenium;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 
 public class TestLocalFirefox {
 
-	public WebDriver driver;
-	public String URL, Node;
-	String pageTitgle;
-	String sWelcome;
-	String sActivationLink;
+    @Test
 
+    public void mailTest() throws MalformedURLException{
 
-	@BeforeTest
-	public void launchbrowser() throws MalformedURLException {
-		URL = "https://bryant.pprd.goalquestprogram.com";
-		String Node = "http://10.110.2.184:4444/wd/hub";
-		DesiredCapabilities cap = DesiredCapabilities.firefox();
-		cap.setBrowserName("firefox");
-		driver = new RemoteWebDriver(new URL(Node), cap);
-		
-		//driver = new FirefoxDriver();
-		//driver.get(URL);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		// Launch website
-		driver.navigate().to(URL);
-		driver.manage().window().maximize();
-		}
-	
-	
-	
-	@Test
-	public void calculatepercent() throws Exception {
-		
-		Thread.sleep(3000);
-		//Verify Page title
-		pageTitgle = driver.getTitle().trim();
-		Assert.assertEquals(pageTitgle, "GoalQuest");
-		//Enter the username, password and click on log in
-		driver.findElement(By.xpath("//*[@id='formUserId']")).sendKeys("cp-012");
-		driver.findElement(By.xpath("//*[@id='formPassword']")).sendKeys("Testing123!");
-		driver.findElement(By.xpath("//*[@id='app-root']/div/div[1]/div/form/a")).click();
-		Thread.sleep(3000);
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		//Verify the welcome page
-		sWelcome= driver.findElement(By.xpath("//*[@id='welcome']/div[1]/div[1]/h3")).getText().trim();
-		Assert.assertEquals(sWelcome, "WELCOME");
-		Thread.sleep(3000);
-		//Click on log out. 
-		driver.findElement(By.xpath("//*[@id='app-root']/div/div[1]/div/div[3]/div[2]/div/span[2]/a[2]")).click();
-		Thread.sleep(3000);
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		//Verify page title
-		sActivationLink= driver.findElement(By.xpath("//*[@id='app-root']/div/div[1]/div/form/p/a")).getText().trim().toString();
-		Assert.assertEquals(sActivationLink, "Activate Account");
-	}
-	@AfterTest
-	public void closeBrowser() {
-		driver.quit();
-	}
-	
-	
+             DesiredCapabilities dr=null;
+
+             dr=DesiredCapabilities.firefox();
+
+             dr.setBrowserName("firefox");
+
+             dr.setPlatform(Platform.LINUX);
+
+             RemoteWebDriver driver=new RemoteWebDriver(new URL("http://10.11.2.184:4444/wd/hub"), dr);
+
+             driver.navigate().to("https://www.google.co.in");
+
+             driver.findElement(By.xpath("//*[@id='gs_htif0']")) .sendKeys("Search me");
+
+             driver.findElement(By.xpath("//*[@id='tsf']/div[2]/div[3]/center/input[1]")) .click();
+
+             driver.close();
+
+}
 }
