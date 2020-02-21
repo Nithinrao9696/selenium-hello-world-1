@@ -27,7 +27,7 @@ public class TestLocalFirefox {
 
              driver.navigate().to("https://www.google.co.in");
 
-             driver.findElement(By.name("q"))) .sendKeys("Search me");
+             driver.findElement(By.name("q")).sendKeys("Search me");
 
              driver.findElement(By.name("btnG")).click();
 
