@@ -23,7 +23,7 @@ public class TestLocalFirefox {
 
              dr.setPlatform(Platform.LINUX);
 
-             RemoteWebDriver driver=new RemoteWebDriver(new URL("http://10.11.2.184:4444/wd/hub"), dr);
+             RemoteWebDriver driver=new RemoteWebDriver(new URL("http://10.110.2.184:4444/wd/hub"), dr);
 
              driver.navigate().to("https://www.google.co.in");
 
