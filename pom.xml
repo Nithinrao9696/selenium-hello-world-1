@@ -80,21 +80,6 @@
 				</configuration>
 			</plugin>
                           <!-- Installs PhantomJS so it doesn't have to be pre-installed -->
-                          <plugin>
-                              <groupId>com.github.klieber</groupId>
-                              <artifactId>phantomjs-maven-plugin</artifactId>
-                              <version>${phantomjs.plugin.version}</version>
-                              <executions>
-                                  <execution>
-                                      <goals>
-                                          <goal>install</goal>
-                                      </goals>
-                                  </execution>
-                              </executions>
-                              <configuration>
-                                  <version>${phantomjs.version}</version>
-                              </configuration>
-                          </plugin>
 		      </plugins>
 	          </build>  
               </project>
