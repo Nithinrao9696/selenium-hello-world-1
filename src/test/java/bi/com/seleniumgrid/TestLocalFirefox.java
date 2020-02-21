@@ -30,7 +30,7 @@ public void verifyTitle()
 {
 driver.get("https://www.amazon.com");
 String ActualTitle = driver.getTitle();
-String ExpectedTitle = "Welcome to Amazon";
+String ExpectedTitle = "Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more";
 Assert.assertEquals(ActualTitle, ExpectedTitle);
 System.out.println("Assert passed");
 }
