@@ -28,7 +28,7 @@ public class TestLocalFirefox {
  @Test
  public void simpleTest() {
  driver.get("https://www.edureka.co/");
- Assert.assertEquals("Instructor Led Online Courses with 24x7 On-Demand Support | Edureka", driver.getTitle());
+ Assert.assertEquals("Instructor Led Online Courses with 24x7 Lifetime Support | Edureka", driver.getTitle());
  }
  
  @AfterTest
