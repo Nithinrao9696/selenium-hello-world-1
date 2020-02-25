@@ -22,7 +22,7 @@ public class TestLocalFirefox {
  DesiredCapabilities capabilities = DesiredCapabilities.chrome();
  capabilities.setBrowserName("chrome");
  capabilities.setPlatform(Platform.LINUX);
- driver = new RemoteWebDriver(new URL("http://162.243.170.23:4444/wd/hub"), capabilities);
+ driver = new RemoteWebDriver(new URL("http://10.110.2.184:4444/wd/hub"), capabilities);
  }
  
  @Test
