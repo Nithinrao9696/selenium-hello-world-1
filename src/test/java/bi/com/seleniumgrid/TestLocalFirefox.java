@@ -20,7 +20,7 @@ public class TestLocalFirefox {
  @BeforeTest
  public void setup() throws MalformedURLException {
  DesiredCapabilities capabilities = DesiredCapabilities.chrome();
- capabilities.setBrowserName("chrome");
+ capabilities.setBrowserName("firefox");
  capabilities.setPlatform(Platform.LINUX);
  driver = new RemoteWebDriver(new URL("http://10.110.2.184:4444/wd/hub"), capabilities);
  }
